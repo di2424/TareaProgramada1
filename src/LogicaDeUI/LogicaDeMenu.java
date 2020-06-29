@@ -19,7 +19,7 @@ public void showMenu () {
     System.out.println("****MENU****");
     System.out.println("1. Ingrese datos de persona");
     System.out.println("2. Ingrese datos de mascota");
-    System.out.println("5. Salir");
+    System.out.println("3. Salir");
 }
 public void showMenu2 () {
     System.out.println("***Elija el tipo de formato");
@@ -34,10 +34,9 @@ public void wrongOption(){
 
 
     public void executeMenu(int option){
-    Person person = funciones.newPerson();
         switch (option){
             case 1:
-               person = funciones.newPerson();
+                Person person = funciones.newPerson();
                 showMenu2();
                 int option2 = input.nextInt();
                 if (option2 == 1){
@@ -47,17 +46,16 @@ public void wrongOption(){
                     System.out.println(person.serializadorJSON());
                 }
 
-
                 break;
             case 2:
-                funciones.newPet();
+                Pet pet = funciones.newPet();
                 showMenu2();
                 option2= input.nextInt();
                 if(option2==1){
-                    System.out.println(funciones.newPet().serializadorXML());
+                    System.out.println(pet.serializadorXML());
                 }
                 if(option2==2){
-                    System.out.println(funciones.newPet().serializadorJSON());
+                    System.out.println(pet.serializadorJSON());
                 }
                 break;
             default:

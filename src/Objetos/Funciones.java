@@ -31,7 +31,7 @@ public class Funciones {
         System.out.println("Ingrese el tipo de animal: ");
         String typeOfAnimal = input.nextLine();
         System.out.println("Ingrese la edad: ");
-        int age = input.nextInt();
+        String age = input.nextLine();
         return new Pet(name,typeOfAnimal,age);
     }
 }

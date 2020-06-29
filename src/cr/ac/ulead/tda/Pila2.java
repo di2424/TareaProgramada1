@@ -5,9 +5,10 @@ import Objetos.Person;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class Pila1 {
+public class Pila2 {
     private Scanner input = new Scanner(System.in);
     private PrintStream output = new PrintStream(System.out);
+
     Person[] person = new Person[50];
 
     String name;
@@ -15,7 +16,8 @@ public class Pila1 {
     String dateOfBirth;
     String weight;
     String height;
-    int position = 0;
+    int position=0;
+    Person aux;
 
     public void push() {
         if (position == person.length - 1) {
@@ -35,35 +37,20 @@ public class Pila1 {
             height = input.nextLine();
             Person persona = new Person(name, lastName, dateOfBirth, weight, height);
             person[position] = persona;
+            aux = persona;
             position++;
         }
     }
 
-    public void pop() {
-        if (position == 0) {
-            System.out.println("La pila esta vacia, no hay elementos para mostrar");
-        } else {
-            System.out.println("Se removio un elemento de la pila");
-                System.out.println("El elemento que se removio fue: " + person[position-1].serializadorXML());
-            person[position] = null;
-
-            position --;
+    public void lowerHeight(int position){
+        if (position<=0){
+            System.out.println("No hay elementos para mostrar");
+            return;
         }
+        if (Float.parseFloat(aux.getHeight()) > Float.parseFloat(person[position-1].getHeight())) {
+                aux = person[position - 1];
+        }
+
+        lowerHeight(position-1);
     }
-    public void showPila() {
-       for (int i=0; i< person.length; i++){
-           if(person[i]==null){
-               break;
-           }
-           System.out.println("Personas en la pila: "+" ["+i+"] " +  person[i].getName() + "" +  person[i].getLastName()
-                   + "" +  person[i].getWeight() + ""+  person[i].getHeight() + ""+   person[i].getDateOfBirth());
-       }
-        
-    }
-
-
-
-
-    }
-
-
+}

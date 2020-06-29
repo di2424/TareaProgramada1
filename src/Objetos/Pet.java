@@ -12,9 +12,9 @@ public class Pet implements SerializadorUlead {
 
     private String name;
     private String typeOfAnimal;
-    private int age;
+    private String age;
 
-    public Pet(String name, String typeOfAnimal, int age) {
+    public Pet(String name, String typeOfAnimal, String age) {
         this.name = name;
         this.typeOfAnimal = typeOfAnimal;
         this.age = age;
@@ -36,11 +36,11 @@ public class Pet implements SerializadorUlead {
         this.typeOfAnimal = typeOfAnimal;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

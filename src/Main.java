@@ -15,7 +15,6 @@ public class Main {
     }
 
     private static void EjemploPersonaYMascota() {
-        Funciones funciones = new Funciones();
         LogicaDeMenu UI = new LogicaDeMenu();
 
 

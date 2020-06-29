@@ -75,7 +75,7 @@ public class Person implements SerializadorUlead {
     @Override
     public String serializadorJSON() {
         return "{ name: \"" + getName() + "\", lastName: \"" + getLastName() +  "\", dateOfBirth: \"" + getDateOfBirth()
-                +  "\", weight: " + getWeight() + ", height" + getHeight() + "}";
+                +  "\", weight: " + getWeight() + ", height: " + getHeight() + "}";
     }
 
 }
